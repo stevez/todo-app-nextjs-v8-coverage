@@ -6,7 +6,7 @@ const coverageReportOptions: CoverageReportOptions = {
   outputDir: "./coverage",
 
   entryFilter: (entry) => {
-    return entry.url.includes('next/static/chunks') ||  entry.url.includes('dist/server');
+    return entry.url.includes('next/static/chunks') ||  entry.url.includes('next/server/app');
   },
 
   sourceFilter: (sourcePath) => {
