@@ -4,7 +4,6 @@ import { addCoverageReport } from 'monocart-reporter';
 // fixtures
 const test = testBase.extend({
     autoTestFixture: [async ({ page }, use) => {
-
         const isChromium = test.info().project.name === 'chromium';
 
         // console.log('autoTestFixture setup...', test.info().project.name);

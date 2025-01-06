@@ -31,16 +31,14 @@ const globalTeardown = async (config) => {
         coverageList = coverageList.filter((entry) => entry.url && entry.url.startsWith('file:'));
         coverageList = coverageList.filter((entry) => !entry.url.includes('node_modules'));
 
-       //  console.log(coverageList.map((entry) => entry.url));
 
-        coverageList = coverageList.filter((entry) => entry.url.includes('next/server/app'));
+        coverageList = coverageList.filter((entry) => entry.url.includes('dist/server'));
 
         coverageList = coverageList.filter((entry) => !entry.url.includes('manifest.js'));
 
         if (!coverageList.length) {
             continue;
         }
-
 
         // attached source content
         coverageList.forEach((entry) => {
