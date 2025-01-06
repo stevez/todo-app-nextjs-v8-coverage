@@ -3,11 +3,10 @@ import { CoverageReportOptions } from "monocart-reporter";
 
 const coverageReportOptions: CoverageReportOptions = {
   // logging: 'debug',
-  name: "Todo-App V8 Coverage Report",
   outputDir: "./coverage",
 
   entryFilter: (entry) => {
-    return entry.url.includes('next/static/chunks') || entry.url.includes('next/server/app');
+    return entry.url.includes('next/static/chunks') ||  entry.url.includes('dist/server');
   },
 
   sourceFilter: (sourcePath) => {
@@ -15,7 +14,7 @@ const coverageReportOptions: CoverageReportOptions = {
   },
 
   sourcePath: (fileSource) => {
-    const list = ['_N_E/'];
+    const list = ['_N_E/', 'todo-app-nextjs-v8-coverage/'];
     for (const pre of list) {
         if (fileSource.startsWith(pre)) {
             return fileSource.slice(pre.length);
@@ -27,7 +26,7 @@ const coverageReportOptions: CoverageReportOptions = {
   reports: ['v8', 'console-details'],
 
   all: {
-    dir: ["./src"],
+    dir: ["./src/app"],
     filter: {
       "**/*.tsx": true,
       "**/*.ts": true,

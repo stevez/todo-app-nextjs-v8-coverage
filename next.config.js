@@ -5,13 +5,8 @@ module.exports = (phase, { defaultConfig }) => {
     ...defaultConfig,
     webpack: (config) => {
       if (process.env.NODE_V8_COVERAGE) {
-        console.log(`${process.env.NODE_V8_COVERAGE} is enabled`);
-        Object.defineProperty(config, 'devtool', {
-          get() {
-            return 'source-map';
-          },
-          set() {}
-        });
+       config.devtool = 'source-map';
+       config.optimization.minimize = false;
       }
       return config;
     }
