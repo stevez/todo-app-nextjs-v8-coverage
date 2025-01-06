@@ -32,7 +32,7 @@ const globalTeardown = async (config) => {
         coverageList = coverageList.filter((entry) => !entry.url.includes('node_modules'));
 
 
-        coverageList = coverageList.filter((entry) => entry.url.includes('dist/server'));
+        coverageList = coverageList.filter((entry) => entry.url.includes('next/server/app'));
 
         coverageList = coverageList.filter((entry) => !entry.url.includes('manifest.js'));
 
